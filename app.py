@@ -61,10 +61,10 @@ if st.button("🔮 Price Predict Karo", use_container_width=True):
     bhk_cat_luxury  = 1 if bhk >= 4 else 0
 
     features = np.array([[
-        bhk, area_sqft, price_per_sqft,
-        locality_enc, area_per_bhk, is_premium,
-        bhk_cat_large, bhk_cat_luxury,
-        bhk_cat_medium, bhk_cat_small
+        bhk, area_sqft,
+    locality_enc, area_per_bhk, is_premium,
+    bhk_cat_large, bhk_cat_luxury,
+    bhk_cat_medium, bhk_cat_small
     ]])
 
     prediction = model.predict(features)[0]
