@@ -62,7 +62,7 @@ if st.button("🔮 Price Predict Karo", use_container_width=True):
 
     features = np.array([[
         bhk, area_sqft,
-    locality_enc, area_per_bhk, is_premium,
+    locality_enc, area_per_bhk,price_per_sqft, is_premium,
     bhk_cat_large, bhk_cat_luxury,
     bhk_cat_medium, bhk_cat_small
     ]])
