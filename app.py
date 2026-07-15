@@ -32,14 +32,25 @@ col1, col2 = st.columns(2)
 
 with col1:
     bhk = st.selectbox("BHK", [1, 2, 3, 4, 5])
+    
+    # Kanpur ke real estate ke hisaab se sensible area range
+    area_ranges = {
+        1: (400, 750),
+        2: (700, 1250),
+        3: (1100, 1900),
+        4: (1700, 3000),
+        5: (2500, 5000)
+    }
+    min_area, max_area = area_ranges[bhk]
+    default_area = (min_area + max_area) // 2
+    
     area_sqft = st.number_input(
         "Area (sqft)", 
-        min_value=300, 
-        max_value=10000, 
-        value=1000, 
+        min_value=min_area, 
+        max_value=max_area, 
+        value=default_area, 
         step=50
     )
-
 with col2:
     locality = st.selectbox("Locality", localities)
     
